@@ -20,46 +20,40 @@
       <h1><a href="index.html"> CSUF TuffyTypes </a></h1>
 
     </header>
-        <div class="typing-container">
-          <div>
-            <input
-              type="checkbox"
-              name="checkbox"
-              id="checkbox"
-              class="checkbox"
-            />
-            <label for="checkbox" class="label">
-              <i class="fas fa-moon"></i>
-              <i class="fas fa-sun"></i>
-              <div class="ball"></div>
-            </label>
-          </div>
-          <h2 id="main-title">Start Typing To Begin!</h2>
-          <div class="stats">
-            <h2 class="timer" id="timer">Seconds Remaining: 60</h2>
-            <h2 id="wordspermin">WPM: 0</h2>
-            <h2 id="Rawwordspermin">Raw WPM: 0</h2>
-            <h2 id="accuracy-percent">Accuracy: 0</h2>
-            <p class="quote-display" id="generated-quote"></p>
+    <div class="typing-container">
+      <div>
+        <input type="checkbox" name="checkbox" id="checkbox" class="checkbox"/>
+        <label for="checkbox" class="label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
+      <h2 id="main-title">Start Typing To Begin!</h2>
+        <div class="stats">
+          <h2 class="timer" id="timer">Seconds Remaining: 60</h2>
+          <h2 id="wordspermin">WPM: 0</h2>
+          <h2 id="Rawwordspermin">Raw WPM: 0</h2>
+          <h2 id="accuracy-percent">Accuracy: 0</h2>
+          <p class="quote-display" id="generated-quote"></p>
+          
+          <div class="options">
+            <h4 class="timer textcolor">Select Timer:</h4>
+            <select name="timer" id="timer1" class ="backcolor" selected onchange="timer_change()">
+              <option id="timerDD" value="15">15 seconds</option>
+              <option id="timerDD" value="30">30 Seconds</option>
+              <option id="timerDD" value="45">45 Seconds</option>
+              <option id="timerDD" value="60" selected>60 seconds</option>
+            </select>
 
-          <!-- timer selection related code by salem-->
-		<label class="timer textcolor">Select Timer:
-			<select name="timer" id="timer1" class ="backcolor" selected onchange="timer_change()">
-				
-				<option id="timerDD" value="15">15 seconds</option>
-				<option id="timerDD" value="30">30 Seconds</option>
-				<option id="timerDD" value="45">45 Seconds</option>
-				<option id="timerDD" value="60" selected>60 seconds</option>
-			</select>
-		</label>
-          <label class="restartButton textcolor">Restart:  
-          <button style="font-size:2rem" id ="restartButton" onclick= "restart()"> <i class="fa fa-refresh"></i></button>
-          </label>
+            <h4 class="restartButton textcolor">Restart:</h4>
+            <button style="font-size:2rem" id ="restartButton" onclick= "restart()"><i class="fa fa-refresh"></i></button>
+          </div>
           <h2 id="word-count">Words Typed: 0</h2>
           <h2 id="error-count">Errors: 0</h2>
           <h2 id="character-count">Characters Typed: 0</h2>
           </div>         
-        <br />
+          <br />
       </div>
     </main>
     <script src="script.js"></script>

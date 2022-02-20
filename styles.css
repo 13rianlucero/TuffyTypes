@@ -150,6 +150,13 @@ header a:focus {
   padding: 0.4em;
 }
 
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 #wordspermin {
   font-weight: bolder;
   /* text-shadow: 1px 3px 1px #000000a4; */
@@ -161,14 +168,13 @@ header a:focus {
   font-weight: bolder;
   font-size: 1.5rem;
   /* text-shadow: 1px 3px 1px #000000a4; */
-  padding: 0px 1em 0px;
+  margin-right: 0.5em;
   display: inline-block;
 }
 
 .restartButton {
   font-weight: bolder;
-  /* text-shadow: 1px 3px 1px #000000a4; */
-  padding: 0px 1em 0px;
+  margin: 0 0.5em 0 2em;
   display: inline-block;
   font-size: 1.5rem;
 }
@@ -176,8 +182,8 @@ header a:focus {
 #restartButton {
   cursor: pointer;
   font-family: "Lora", serif;
-  border-style: solid;
-  background-color: #e17000e8;
+  border: none;
+  background: transparent;
   color: rgb(255, 255, 255);
 }
 
