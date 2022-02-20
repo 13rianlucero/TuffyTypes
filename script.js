@@ -163,7 +163,11 @@ $(document).ready(function () {
 			if (charTyped !== quoteChars[currentIndex]) {
 				$("span").eq(currentIndex).css("background-color", "#e32957");
 				$("span").eq(currentIndex).addClass("wrong");
-				errorCount++;				
+				errorCount++;
+				// Alert user to delete at least one error after making 3 or more.
+				if (errorCount >= 3) {
+					alert("You have more than 3 errors! Please type backspace and fix your errors to continue."); 
+				}
 				currentIndex++;
 				characterCount++;
 			}
