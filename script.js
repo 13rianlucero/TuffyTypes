@@ -4,6 +4,7 @@ $(document).ready(function () {
 	let wordCount = 0;
 	let characterCount = 0;
 	let errorCount = 0;
+	let errorStreak = 0;
 	let Gross_wpm = 0;
 	let Raw_wpm = 0;
 	let AccuracyPercent = 0;
@@ -152,30 +153,30 @@ $(document).ready(function () {
 		
 		//updates counters on keypress
 		if (secondsRemaining > 0) TextCounter();
-
-
 		//starts timer
 		if (block == false) {Start_timer(); block = true; $(myobj).addClass("hidden");}
-
-
-	
 			$("span").eq(currentIndex).addClass("blinking");
 			if (charTyped !== quoteChars[currentIndex]) {
-				$("span").eq(currentIndex).css("background-color", "#e32957");
-				$("span").eq(currentIndex).addClass("wrong");
-				errorCount++;
-				// Alert user to delete at least one error after making 3 or more.
-				if (errorCount >= 3) {
-					alert("You have more than 3 errors! Please type backspace and fix your errors to continue."); 
+				if (errorStreak < 2) {
+					$("span").eq(currentIndex).css("background-color", "#e32957");
+					$("span").eq(currentIndex).addClass("wrong");
+					errorStreak++;
+					currentIndex++;
+					characterCount++;
+					errorCount++;
 				}
-				currentIndex++;
-				characterCount++;
+				else {
+					$("span").eq(currentIndex).removeClass("blinking");
+					$("span").eq(currentIndex).removeClass("wrong");
+					$("span").eq(currentIndex).css("background-color", "transparent");
+				}
 			}
 			else {
 				$("span").eq(currentIndex).css("background-color", "#8cff78");
 				characterCount++;
-				wordCount = Math.floor(characterCount / 5);
 				currentIndex++;
+				wordCount = Math.floor(characterCount / 5);
+				errorStreak = 0;
 			}
 		
 
@@ -200,7 +201,7 @@ $(document).ready(function () {
 					errorCount--;					
 				}
 				$("span").eq(currentIndex).removeClass("blinking");
-				$("span").eq(currentIndex).css("background-color", "#00000000");
+				$("span").eq(currentIndex).css("background-color", "transparent");
 			}
 		}
 	});
@@ -221,7 +222,7 @@ $(document).ready(function () {
 		RawwordsperminEl.text("Raw WPM: " + Raw_wpm.toString());
 		aaE1.text("Accuracy: "+ AccuracyPercent.toString() + "%");
 		wordsperminEl.text("WPM: " + Gross_wpm.toString());
-    	wordsperminEl2.text("WPM: " + Gross_wpm.toString());
+		wordsperminEl2.text("WPM: " + Gross_wpm.toString());
 	}
 
 	//calculates all wpm's and word count
