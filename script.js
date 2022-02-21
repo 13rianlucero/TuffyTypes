@@ -25,6 +25,7 @@ $(document).ready(function () {
 	let currentIndex = 0;
 	let charTyped = null;
 	let block = false;
+	let sentence = 0;
 	var myobj = document.getElementById("main-title");
 	
     // stats page stuff
