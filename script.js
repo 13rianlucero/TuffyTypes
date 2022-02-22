@@ -25,6 +25,7 @@ $(document).ready(function () {
 	let currentIndex = 0;
 	let charTyped = null;
 	let block = false;
+	let sentence = '';
 	var myobj = document.getElementById("main-title");
 	
     // stats page stuff
@@ -49,11 +50,20 @@ $(document).ready(function () {
 		return fetch(RANDOM_QUOTE_API_URL)
 			.then((response) => response.json())
 			.then((data) => data.content)
+			.then((quote) => appendSpace(quote))
 			.then((quote) => {
 				let clean = cleanQuote(quote);
 				return clean;
 			});
 	}
+
+	// this function appends a space to the end of every quote
+	async function appendSpace(inputQuote) {
+		let quote = inputQuote;
+		quote += " ";
+		return quote;
+	}
+
 	// this function rejects the current quote if it has the Forbidden Characters
 	async function cleanQuote(inputQuote) {
 		let quote = inputQuote
