@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
@@ -5,6 +12,7 @@
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -16,9 +24,6 @@ body {
   margin: 0;
   font-family: "Lora", serif;
   color: #fff;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 
   background-color: rgb(0, 0, 0);
@@ -35,15 +40,22 @@ img {
 /* HEADER SECTION */
 header {
   background-color: #00274c;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background: rgb(0, 39, 76);
-  background: radial-gradient(
-    circle,
-    rgb(0, 39, 76) 53%,
-    rgba(225, 112, 0) 100%
-  );
+  background: -o-radial-gradient(circle,
+      rgb(0, 39, 76) 53%,
+      rgba(225, 112, 0) 100%);
+  background: radial-gradient(circle,
+      rgb(0, 39, 76) 53%,
+      rgba(225, 112, 0) 100%);
 }
 
 header h1 {
@@ -69,14 +81,22 @@ header a:focus {
   position: absolute;
 }
 
-.checkbox:checked + .label .ball {
+.checkbox:checked+.label .ball {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
   transform: translateX(24px);
 }
 
 .label {
   background-color: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
   position: relative;
@@ -85,6 +105,8 @@ header a:focus {
   height: 26px;
   width: 50px;
   margin: 0;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
   transform: scale(1.5);
 }
 
@@ -96,7 +118,11 @@ header a:focus {
   height: 22px;
   width: 22px;
   position: absolute;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  -o-transition: transform 0.2s linear;
   transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
 }
 
 .fa-moon {
@@ -134,8 +160,15 @@ header a:focus {
   margin: 0em 5rem;
   margin-top: 1em;
   padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   /* to center it */
   border-radius: 80px;
@@ -144,6 +177,9 @@ header a:focus {
 
 .stats {
   text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   background-color: #e17000e8;
   border-radius: 80px;
@@ -151,8 +187,14 @@ header a:focus {
 }
 
 .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
 }
@@ -214,20 +256,38 @@ header a:focus {
 .hidden {
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: visibility 0s 0.5s, opacity 0.5s linear;
+  -o-transition: visibility 0s 0.5s, opacity 0.5s linear;
   transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
 .blinking {
+  -webkit-box-shadow: 0.12em 0 0 #000000;
   box-shadow: 0.12em 0 0 #000000;
+  -webkit-animation: blink 0.8s linear 0.5s infinite;
   animation: blink 0.8s linear 0.5s infinite;
 }
 
-@keyframes blink {
+@-webkit-keyframes blink {
   from {
+    -webkit-box-shadow: 0.12em 0 0 #000000;
     box-shadow: 0.12em 0 0 #000000;
   }
 
   to {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+@keyframes blink {
+  from {
+    -webkit-box-shadow: 0.12em 0 0 #000000;
+    box-shadow: 0.12em 0 0 #000000;
+  }
+
+  to {
+    -webkit-box-shadow: none;
     box-shadow: none;
   }
 }
@@ -258,9 +318,15 @@ header a:focus {
   background-color: rgb(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -314,15 +380,14 @@ header a:focus {
   background-color: #0bd476;
 }
 
+
+
 /* dark mode */
 
 body.dark {
   margin: 0;
   font-family: "Lora", serif;
   color: #ffffffd7;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   background-color: rgb(0, 0, 0);
   background-image: url(./images/nightsky.jpg);
@@ -332,10 +397,17 @@ body.dark {
 
 body.dark header {
   background-color: #ffffffd7;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background: rgb(0, 0, 0);
+  background: -o-radial-gradient(circle, rgb(0, 0, 0) 53%, rgb(66, 66, 71) 100%);
   background: radial-gradient(circle, rgb(0, 0, 0) 53%, rgb(66, 66, 71) 100%);
 }
 
@@ -345,6 +417,9 @@ body.dark header a {
 
 body.dark .stats {
   text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   background-color: rgba(8, 8, 8, 0.671);
   border-radius: 80px;
@@ -422,6 +497,8 @@ body.dark #restartButton:hover {
     margin: 0em 2rem;
     margin-top: 0.5em;
     padding: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     border-radius: 60px;
   }
@@ -445,8 +522,15 @@ body.dark #restartButton:hover {
   }
 
   .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center;
   }
@@ -473,9 +557,11 @@ body.dark #restartButton:hover {
   }
 }
 
-/* .options {
+/* 
+.options {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-} */
+}
+*/
