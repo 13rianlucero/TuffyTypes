@@ -1,5 +1,6 @@
 const RANDOM_QUOTE_API_URL = "https://api.quotable.io/random";
 var timer_function;
+
 $(document).ready(function () {
 	let wordCount = 0;
 	let characterCount = 0;
@@ -9,8 +10,16 @@ $(document).ready(function () {
 	let Raw_wpm = 0;
 	let AccuracyPercent = 0;
 	let SecondsPassed = 0;
-	let secondsRemaining = 60;
+	let secondsRemaining = 0;
+	if (localStorage.getItem('time') === null) {
+		secondsRemaining = 60;
+	}
+	else {
+		secondsRemaining = localStorage.getItem('time');
+	}
+	
 	let generatedQuote = ``;
+	let timerEl = $("#timer");
 	let aaE1 = $("#accuracy-percent");
 	let wcEl = $("#word-count");
 	let ccEl = $("#character-count");
@@ -27,7 +36,6 @@ $(document).ready(function () {
 	let block = false;
 	let sentence = '';
 	var myobj = document.getElementById("main-title");
-	
     // stats page stuff
     let modalEl = $("#bg-modal");
     let wcEl2 = $("#word-count-2");
@@ -36,13 +44,16 @@ $(document).ready(function () {
     let ccEl2 = $("#character-count-2");
     let ecEl2 = $("#error-count-2");
     let wordsperminEl2 = $("#wordspermin-2");
-	
-		document.getElementById("Rawwordspermin").style.display = "none";
-		document.getElementById("word-count").style.display = "none";
-		document.getElementById("error-count").style.display = "none";
-		document.getElementById("character-count").style.display = "none";
-		document.getElementById("accuracy-percent").style.display = "none";
-		document.getElementById("wordspermin").style.display = "none";
+
+	timerEl.text("Seconds Remaining: " + secondsRemaining.toString());
+
+
+	document.getElementById("Rawwordspermin").style.display = "none";
+	document.getElementById("word-count").style.display = "none";
+	document.getElementById("error-count").style.display = "none";
+	document.getElementById("character-count").style.display = "none";
+	document.getElementById("accuracy-percent").style.display = "none";
+	document.getElementById("wordspermin").style.display = "none";
 
 
 	// this function uses the API to fetch the actual quote
@@ -227,7 +238,7 @@ $(document).ready(function () {
 		wcEl.text("Words Typed: " + wordCount.toString());
 		wcEl2.text("Words Typed: " + wordCount.toString());
 		RcEl2.text("WPM: " + Gross_wpm.toString());
-		AcEl2.text("Accuracy: " + AccuracyPercent.toString());
+		AcEl2.text("Accuracy: " + AccuracyPercent.toString() + "%");
 
 		RawwordsperminEl.text("Raw WPM: " + Raw_wpm.toString());
 		aaE1.text("Accuracy: "+ AccuracyPercent.toString() + "%");
@@ -253,7 +264,6 @@ $(document).ready(function () {
 		
 	}
 	// Timer
-	let timerEl = $("#timer");
 	function Start_timer() {
 		let interval = setInterval(function () {
 			if (secondsRemaining-- > 0) {
@@ -273,12 +283,14 @@ $(document).ready(function () {
 	
 
   timer_change = async function() {
-
-    var select = document.getElementById('timer1');
-    var value = select.options[select.selectedIndex].value;
-    secondsRemaining = value;
-    $("#timer").text("Seconds Remaining: " + secondsRemaining);
-
+    let select = document.getElementById('timer1');
+    let value = select.options[select.selectedIndex].value;
+    
+	//secondsRemaining = value;
+    //$("#timer").text("Seconds Remaining: " + secondsRemaining);*/
+	
+	localStorage.setItem('time', value);
+	restart();
   }
 
 

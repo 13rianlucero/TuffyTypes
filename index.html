@@ -16,20 +16,25 @@
   </head>
     <main>
       <body>
-            <header>
-      <h1><a href="index.html"> CSUF TuffyTypes </a></h1>
+        <header> 
+          <h1>
+            <a href="index.html"> CSUF TuffyTypes</a>
+          </h1>
+        </header>
 
-    </header>
-    <div class="typing-container">
-      <div>
-        <input type="checkbox" name="checkbox" id="checkbox" class="checkbox"/>
-        <label for="checkbox" class="label">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-          <div class="ball"></div>
-        </label>
+      <div class="top-row">
+        <div class="day-night-toggle">
+          <input type="checkbox" name="checkbox" id="checkbox" class="checkbox"/>
+          <label for="checkbox" class="label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+        <h2 id="main-title">Start Typing To Begin!</h2>
       </div>
-      <h2 id="main-title">Start Typing To Begin!</h2>
+
+      <div class="typing-container">
         <div class="stats">
           <h2 class="timer" id="timer">Seconds Remaining: 60</h2>
           <h2 id="wordspermin">WPM: 0</h2>
@@ -39,20 +44,21 @@
           
           <div class="options">
             <h4 class="timer textcolor">Select Timer:</h4>
-            <select name="timer" id="timer1" class ="backcolor" selected onchange="timer_change()">
+            <select name="timer" id="timer1" class ="backcolor" onchange="timer_change()">
+              <option id="timerDD">Select your time</option>
               <option id="timerDD" value="15">15 seconds</option>
               <option id="timerDD" value="30">30 Seconds</option>
               <option id="timerDD" value="45">45 Seconds</option>
-              <option id="timerDD" value="60" selected>60 seconds</option>
+              <option id="timerDD" value="60">60 seconds</option>
             </select>
 
             <h4 class="restartButton textcolor">Restart:</h4>
             <button style="font-size:2rem" id ="restartButton" onclick= "restart()"><i class="fa fa-refresh"></i></button>
           </div>
-          <h2 id="word-count">Words Typed: 0</h2>
-          <h2 id="error-count">Errors: 0</h2>
-          <h2 id="character-count">Characters Typed: 0</h2>
-          </div>         
+            <h2 id="word-count">Words Typed: 0</h2>
+            <h2 id="error-count">Errors: 0</h2>
+            <h2 id="character-count">Characters Typed: 0</h2>
+            </div>         
           <br />
       </div>
     </main>
@@ -60,7 +66,6 @@
     <!-- modal -->
     <div class="bg-modal" id="modal-id">
       <div class="modal-content">
-        
         <h2 id="wordspermin-2" class="wpm">WPM: 0</h2>
         <h2 id="word-count-2" class="wordsTyped">Words Typed: 0</h2>
         <h2 id="error-count-2" class="errCount">Errors: 0</h2>
