@@ -111,7 +111,6 @@ $(document).ready(function () {
 	}
 	// this function handles new quotes after the start of the test and manages their respective variables.
 	async function renderNewQuote() {
-
 		let quote = await getRandomQuote();
 		removeTopQuote();
 		quote += '\n';
@@ -175,6 +174,7 @@ $(document).ready(function () {
 		//updates counters on keypress
 		if (secondsRemaining > 0) TextCounter();
 		//starts timer
+		document.activeElement.blur()
 		if (block == false) {Start_timer(); block = true; $(myobj).addClass("hidden");}
 			$("span").eq(currentIndex).addClass("blinking");
 			if (charTyped !== quoteChars[currentIndex]) {
