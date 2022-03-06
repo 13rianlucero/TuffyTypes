@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
@@ -142,8 +149,14 @@ header a:focus {
 }
 
 .top-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 95%;
   margin: 0 auto;
@@ -365,6 +378,8 @@ header a:focus {
   border-radius: 80px;
   text-align: center;
   color: #ffffff;
+  -webkit-box-pack: normal;
+  -ms-flex-pack: normal;
   justify-content: normal;
   padding: 20px;
   font-size: 0.8rem;
