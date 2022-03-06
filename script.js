@@ -194,8 +194,9 @@ $(document).ready(function () {
 			}
 			else {
 				$("span").eq(currentIndex).css("background-color", "#8cff78");
-				if ($("span").eq(currentIndex).text() === ' ') {
+				if ($("span").eq(currentIndex + 1).text() === ' ') {
 					wordCount++;
+					console.log(wordCount);
 				}
 				characterCount++;
 				currentIndex++;
