@@ -171,8 +171,8 @@ header a:focus {
   max-width: 90%;
   min-width: 90%;
   margin: 0 auto;
-  max-height: 11rem;
-  min-height: 11rem;
+  max-height: 11.5rem;
+  min-height: 11.5rem;
 }
 
 .typing-container {
@@ -352,7 +352,6 @@ header a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-
 }
 
 #modal-id {

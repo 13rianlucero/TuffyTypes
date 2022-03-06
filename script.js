@@ -194,9 +194,11 @@ $(document).ready(function () {
 			}
 			else {
 				$("span").eq(currentIndex).css("background-color", "#8cff78");
+				if ($("span").eq(currentIndex).text() === ' ') {
+					wordCount++;
+				}
 				characterCount++;
 				currentIndex++;
-				wordCount = Math.floor(characterCount / 5);
 				errorStreak = 0;
 			}
 		
@@ -248,7 +250,6 @@ $(document).ready(function () {
 
 	//calculates all wpm's and word count
 	function wpmCounter() {
-		wordCount = Math.floor(characterCount / 5);
 		Gross_wpm = Math.floor(((wordCount - errorCount) / SecondsPassed) * 60);
 		Raw_wpm = Math.floor(((wordCount / SecondsPassed) * 60));
 		
@@ -271,8 +272,10 @@ $(document).ready(function () {
 				SecondsPassed++;
 			}
 			else {
-        $("#modal-id").css("display", "flex");
-        displaymodal();
+        		$("#modal-id").css("display", "flex");
+				document.onkeydown = function (e) {
+        			return false;
+				}
 				TextCounter();
 				clearInterval(interval);
 				return;
