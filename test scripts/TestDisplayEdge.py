@@ -1,4 +1,5 @@
-﻿def Test1():
+﻿#Test to ensure that the web app and the results window at the end of the typing test display properly
+def Test1():
     #Launches the specified browser and opens the specified URL in it.
     Browsers.Item[btEdge].Run("https://stephenlandaas.com/TuffyTypes/")
     #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("//a[contains(text(), 'CSUF TuffyTypes')]") object equals 'CSUF TuffyTypes'.
