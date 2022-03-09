@@ -1,4 +1,6 @@
-﻿#Test to ensure that the web app and the results window at the end of the typing test display properly
+# Test to ensure that the web app and the results window at the end of the typing test display properly
+# Test Scenario 5, Test Case 3
+
 def TestDisplayEdge():
     #Launches the specified browser and opens the specified URL in it.
     Browsers.Item[btEdge].Run("https://stephenlandaas.com/TuffyTypes/")
