@@ -1,7 +1,13 @@
 ﻿#Test to ensure that the web app and the results window at the end of the typing test display properly
-def Test1():
+def TestDisplayChrome():
     #Launches the specified browser and opens the specified URL in it.
     Browsers.Item[btChrome].Run("https://stephenlandaas.com/TuffyTypes/")
+    #Maximizes the specified Window object.
+    Aliases.browser.BrowserWindow.Maximize()
+    #Selects the '60 seconds' item of the 'selectTimer1' combo box.
+    Aliases.browser.pageTuffytypes.selectTimer1.ClickItem("60 seconds")
+    #Waits until the browser loads the page and is ready to accept user input.
+    Aliases.browser.pageTuffytypes.Wait()
     #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("//a[contains(text(), 'CSUF TuffyTypes')]") object equals 'CSUF TuffyTypes'.
     aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("//a[contains(text(), 'CSUF TuffyTypes')]"), "contentText", cmpEqual, "CSUF TuffyTypes")
     #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("#main-title") object equals 'Start Typing To Begin!'.
@@ -12,16 +18,16 @@ def Test1():
     aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("//h4[.='Select Timer:']"), "contentText", cmpEqual, "Select Timer:")
     #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("//h4[.='Restart:']") object equals 'Restart:'.
     aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("//h4[.='Restart:']"), "contentText", cmpEqual, "Restart:")
+    #Selects the '15 seconds' item of the 'selectTimer1' combo box.
+    Aliases.browser.pageTuffytypes.selectTimer1.ClickItem("15 seconds")
+    #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("#timer") object equals 'Seconds Remaining: 15'.
+    aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("#timer"), "contentText", cmpEqual, "Seconds Remaining: 15")
+    #Clicks the 'textnodeY' control.
+    Aliases.browser.pageTuffytypes.textnodeY.Click()
     #Enters ' ' in the 'textnodeCsufTuffytypes' object.
     Aliases.browser.pageTuffytypes.textnodeCsufTuffytypes.Keys(" ")
     #Delays the test execution for the specified time period.
-    Delay(60000)
-    #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("//div[contains(@class, 'modal-content')]") object equals 'WPM: 0
-    #Words Typed: 0
-    #Errors: 1
-    #Accuracy: 0%
-    #Play again?'.
-    aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("//div[contains(@class, 'modal-content')]"), "contentText", cmpEqual, "WPM: 0\nWords Typed: 0\nErrors: 1\nAccuracy: 0%\nPlay again?")
+    Delay(15000)
     #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("#wordspermin-2") object equals 'WPM: 0'.
     aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("#wordspermin-2"), "contentText", cmpEqual, "WPM: 0")
     #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("#word-count-2") object equals 'Words Typed: 0'.
