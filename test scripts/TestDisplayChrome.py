@@ -1,4 +1,6 @@
-﻿#Test to ensure that the web app and the results window at the end of the typing test display properly
+# Test to ensure that the web app and the results window at the end of the typing test display properly
+# Test Scenario 5, Test Case 1
+
 def TestDisplayChrome():
     #Launches the specified browser and opens the specified URL in it.
     Browsers.Item[btChrome].Run("https://stephenlandaas.com/TuffyTypes/")
