@@ -18,10 +18,8 @@ def TestDisplayChrome():
     aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("//h4[.='Select Timer:']"), "contentText", cmpEqual, "Select Timer:")
     #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("//h4[.='Restart:']") object equals 'Restart:'.
     aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("//h4[.='Restart:']"), "contentText", cmpEqual, "Restart:")
-    #Selects the '15 seconds' item of the 'selectTimer1' combo box.
+    #Clicks the 'Chrome_RenderWidgetHostHWND' object.
     Aliases.browser.pageTuffytypes.selectTimer1.ClickItem("15 seconds")
-    #Checks whether the 'contentText' property of the Aliases.browser.pageTuffytypes.FindElement("#timer") object equals 'Seconds Remaining: 15'.
-    aqObject.CheckProperty(Aliases.browser.pageTuffytypes.FindElement("#timer"), "contentText", cmpEqual, "Seconds Remaining: 15")
     #Clicks the 'textnodeY' control.
     Aliases.browser.pageTuffytypes.textnodeY.Click()
     #Enters ' ' in the 'textnodeCsufTuffytypes' object.
