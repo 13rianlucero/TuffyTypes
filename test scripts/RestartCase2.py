@@ -1,4 +1,6 @@
-﻿def TestCase2():
+# Test Scenario 1, Test Case 2
+
+def TestCase2():
     Browsers.Item[btChrome].Navigate("https://stephenlandaas.com/TuffyTypes/")
     Delay(3000)
     Var1 = Aliases.browser.pageTuffytypes.FindElement("#generated-quote").contentText
