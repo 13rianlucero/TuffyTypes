@@ -1,3 +1,5 @@
+# Test Scenario 2, Cases 1-4
+
 def nightBtnLoopImage():
     #Iterates through the specified browsers.
     i = 0
