@@ -542,7 +542,8 @@ body.dark #restartButton:hover {
   }
 
   .quote-display {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    overflow-y: auto;
   }
 
   .typing-container {
@@ -603,7 +604,6 @@ body.dark #restartButton:hover {
   .quote-display {
     font-size: 1rem;
     overflow-y: auto;
-    yy
   }
 
   .stats {
