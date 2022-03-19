@@ -1,5 +1,6 @@
 ﻿#Tests if the selected time matches the corresponding time on the UI.
-#Test Scenario #6
+#Test Scenario #3, Test Cases 1-4
+
 def Test_timer():
     #Opens the specified URL in a running instance of the specified browser.
     Browsers.Item[btChrome].Navigate("https://stephenlandaas.com/TuffyTypes/")
