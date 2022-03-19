@@ -1,4 +1,6 @@
-﻿def TestCase3():
+# Test Scenario 1, Test Case 3
+
+def TestCase3():
     Browsers.Item[btChrome].Navigate("https://stephenlandaas.com/TuffyTypes/")
     Aliases.browser.BrowserWindow.Maximize()
     Aliases.browser.pageTuffytypes.selectTimer1.ClickItem("60 seconds")
