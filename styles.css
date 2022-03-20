@@ -184,8 +184,9 @@ header a:focus {
   max-width: 90%;
   min-width: 90%;
   margin: 0 auto;
-  max-height: 11.5rem;
-  min-height: 11.5rem;
+  max-height: 12rem;
+  min-height: 12rem;
+  overflow-y:auto;
 }
 
 .typing-container {
